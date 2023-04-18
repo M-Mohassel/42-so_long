@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 18:09:18 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/18 18:13:20 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:47:46 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

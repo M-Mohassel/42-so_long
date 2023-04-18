@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 11:24:35 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/26 14:09:00 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:46:25 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

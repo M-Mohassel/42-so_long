@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:29:46 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/31 13:00:31 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:47:01 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "../../include/libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

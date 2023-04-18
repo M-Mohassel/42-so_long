@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:41:07 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/26 16:53:32 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:48:17 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {

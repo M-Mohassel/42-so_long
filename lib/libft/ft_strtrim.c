@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 18:17:42 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/30 16:27:24 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:48:14 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
 
 static int	char_in_str(char c, char const *s)
 {

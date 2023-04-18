@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 18:48:39 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/31 13:03:59 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:48:06 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "../../include/libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:21:15 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/17 19:01:48 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:46:51 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

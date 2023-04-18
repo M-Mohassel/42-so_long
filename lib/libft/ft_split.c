@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 20:32:16 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/07 17:02:52 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:47:31 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "../../include/libft.h"
 
 static char	*trim_string(char *s, char c)
 {

@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 13:25:28 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/18 13:48:52 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:47:40 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "../../include/libft.h"
 
 char	*ft_strdup(const char *s)
 {

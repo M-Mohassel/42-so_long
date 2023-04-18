@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:45:09 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/17 12:32:35 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:32:37 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "../../include/libft.h"
 
 int	ft_atoi(const char *str)
 {

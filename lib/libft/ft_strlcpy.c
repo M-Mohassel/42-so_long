@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 15:04:55 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/25 16:20:37 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:47:55 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "../../include/libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

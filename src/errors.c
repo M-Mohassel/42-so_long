@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:03:34 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/08 17:53:45 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/15 14:16:01 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	components_error(char *map_string)
 	return (TRUE);
 }
 
-/*int	structure_error(t_map *map)
+int	structure_error(t_map *map)
 {
 	write(2, "Map is leaking or structure is incorrect.\n", 42);
 	free(map->player);
@@ -38,7 +38,7 @@ int	no_valid_path(t_map *map)
 	write(2, "Map has no valid path.\n", 23);
 	destroy_structure(map);
 	return (TRUE);
-}*/
+}
 
 int	empty_map(char *map_string)
 {

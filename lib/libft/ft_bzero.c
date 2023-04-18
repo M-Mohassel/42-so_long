@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:35:40 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/18 13:16:50 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:45:39 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "../../include/libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

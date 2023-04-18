@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 12:39:00 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/31 13:00:54 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:46:54 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "../../include/libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

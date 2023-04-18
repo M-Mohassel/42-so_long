@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   path_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/25 15:52:08 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/18 15:48:02 by misi-moh         ###   ########.fr       */
+/*   Created: 2023/04/15 16:03:25 by misi-moh          #+#    #+#             */
+/*   Updated: 2023/04/15 16:08:27 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../include/so_long.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	check_map_path(t_map *map)
 {
-	unsigned int	i;
-	char			*ret;
+	int			i;
+	t_pos	new_pos;
 
-	if (!s)
-		return (0);
 	i = 0;
-	ret = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!ret)
-		return (NULL);
-	while (s[i])
+	mark_map(&map);
+	while (map->map_loop == 0)
 	{
-		ret[i] = f(i, s[i]);
-		i++;
+		while (map->movements[i])
+		{
+			map->player_moved = 0;
+			new_pos = calculate_coords(map->player, map->movements[i++]);
+			if (is_valid_coord(new_pos, &map))
+			{
+				move_player_to_new_pos(&new_pos, &map);
+				break ;
+			}
+		}
+		if (!map->player_moved)
+			step_back(&map);
+		i = 0;
 	}
-	ret[i] = 0;
-	return (ret);
 }

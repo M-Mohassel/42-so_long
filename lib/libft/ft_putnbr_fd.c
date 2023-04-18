@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 16:36:00 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/25 18:00:54 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:47:21 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

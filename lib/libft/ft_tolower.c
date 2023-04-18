@@ -6,11 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 19:12:06 by misi-moh          #+#    #+#             */
-/*   Updated: 2022/12/14 19:19:27 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:48:20 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "../../include/libft.h"
 
 int	ft_tolower(int c)
 {

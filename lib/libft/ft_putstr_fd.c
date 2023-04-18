@@ -6,12 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 16:25:52 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/08 16:40:51 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:47:27 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
+#include "../../include/libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

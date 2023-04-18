@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:54:28 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/14 12:06:18 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/15 13:26:40 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int map_has_errors(char *argv)
     if (is_missing_components(map_string))
         return (components_error(map_string));
     map = init_structure(map_string);
-    free(map_string)
+    free(map_string);
     if (not_valid_map(map->map))
         return (structure_error(map));
     if (has_no_valid_path(map))

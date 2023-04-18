@@ -6,16 +6,17 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:31:54 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/08 18:02:35 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:36:12 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "MLX42/MLX42.h"
+# include "../lib/MLX42/include/MLX42/MLX42.h"
 # include <unistd.h>
 # include <stdio.h>
+# include <stdlib.h>
 # include <fcntl.h>
 # include "libft.h"
 # include <sys/errno.h>
@@ -29,6 +30,8 @@
 # define TREE "./assets/baum1.xpm"
 
 typedef struct s_map			t_map;
+typedef struct s_position		t_pos;
+typedef struct s_data			t_data;
 
 typedef struct s_vars
 {
@@ -50,7 +53,7 @@ typedef struct s_data
 	int			drawP;
 	char		*err_msg;
 	mlx_image_t	*img;
-}			t_data;
+};
 
 enum e_bool
 {
@@ -70,6 +73,11 @@ struct s_map
 	int					map_loop;
 };
 
+struct s_position
+{
+	int	x;
+	int	y;
+};
 
 void	draw_map(t_data **data);
 int		print_usage(void);
