@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:31:54 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/18 15:36:12 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:15:52 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,14 @@
 typedef struct s_map			t_map;
 typedef struct s_position		t_pos;
 typedef struct s_data			t_data;
+typedef struct s_texture		t_texture;
+typedef struct s_idle_texture	t_idle;
+
+enum e_bool
+{
+	FALSE,
+	TRUE
+};
 
 typedef struct s_vars
 {
@@ -41,18 +49,32 @@ typedef struct s_vars
 
 typedef struct s_data
 {
-	mlx_t		*mlx;
-	int			map_height;
-	int			map_length;
-	char		*map_string;
-	int			game_over;
-	void		*walls;
-	void		*exit;
-	void		*player;
-	char		**map;
-	int			drawP;
-	char		*err_msg;
-	mlx_image_t	*img;
+	mlx_t			*mlx;
+	mlx_image_t		*img;
+	char			*collectible_count;
+	mlx_texture_t	*player;
+	mlx_image_t		*score;
+	t_idle			*idle;
+	t_texture		*tiles;
+	t_list			*collectible_list;
+	t_list			*enemy_list;
+	mlx_texture_t	*game_icon;
+	mlx_image_t		*player_img;
+	mlx_image_t		*player_box;
+	t_pos			*enemy_movement[5];
+	char			*map_string;
+	char			**map;
+	int				width;
+	int				height;
+};
+
+struct	s_idle_texture
+{
+	mlx_texture_t	*left[9];	
+	mlx_texture_t	*right[9];	
+	mlx_image_t		*right_idle[9];	
+	mlx_image_t		*left_idle[9];	
+	mlx_image_t		*idle;
 };
 
 enum e_bool
