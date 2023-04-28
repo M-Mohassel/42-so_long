@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:54:28 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/15 13:26:40 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/28 14:51:38 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 int has_no_valid_path(t_map *map)
 {
     check_map_path(map);
+    ft_lstclear(&map->double_visited, free);
+	if (contains_component(map->map))
+		return (TRUE);
+	return (FALSE);
 }
 
 int empty(char *map_string)
@@ -45,4 +49,26 @@ int map_has_errors(char *argv)
         return(no_valid_path(map));
     destroy_structure(map);
     return (FALSE);
+}
+
+int	is_component(char *str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+		if ((str[i] == 'E' || str[i] == 'P') || str[i] == 'C')
+			return (TRUE);
+	return (FALSE);
+}
+
+int	contains_component(char **map)
+{
+	int	i;
+
+	i = -1;
+	while (map[++i])
+		if (is_component(map[i]))
+			return (TRUE);
+	return (FALSE);
 }

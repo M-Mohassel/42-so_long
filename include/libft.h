@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:47:09 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/18 15:45:51 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/28 15:00:31 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define LIBFT_H
 
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
 #include <stdio.h>
 #include <stddef.h>

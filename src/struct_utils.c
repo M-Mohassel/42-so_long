@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 12:57:22 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/15 15:05:28 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/28 14:31:39 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,44 @@ t_map	*init_structure(char *map_string)
 	map->movements[3]->x = -1;
 	map->movements[3]->y = 0;
 	map->map = ft_split(map_string, '\n');
-	map->player = get_player_position(map->map);
-	map->exit = get_exit_position(map->map);
+	map->player = get_player_pos(map->map);
+	map->exit = get_exit_pos(map->map);
 	map->map_loop = 0;
 	return (map);
 }
+
+t_pos   *get_component(char **map, char type)
+{
+	int			x;
+	int			y;
+	t_pos	    *exit;
+
+	y = -1;
+	exit = (t_pos *)malloc(sizeof(t_pos));
+	while (map[++y])
+	{
+		x = -1;
+		while (map[y][++x])
+		{
+			if (map[y][x] == type)
+			{
+				exit->x = x;
+				exit->y = y;
+				return (exit);
+			}
+		}
+	}
+	return (NULL);
+}
+
+void	destroy_structure(t_map *map)
+{
+	free(map->movements[0]);
+	free(map->movements[1]);
+	free(map->movements[2]);
+	free(map->movements[3]);
+	free_split(map->map);
+	free(map->exit);
+	free(map);
+}
+
