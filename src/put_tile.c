@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:13:41 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/28 13:14:09 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/29 14:00:56 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	add_player(t_data **data)
 	int			posx;
 	int			posy;
 	t_idle		*player;
-	t_pos	    *player_pos;
+	t_pos		*player_pos;
 
 	player_pos = get_component((*data)->map, 'P');
 	posx = player_pos->x * TILE;
@@ -78,7 +78,7 @@ void	add_player(t_data **data)
 void	put_door(t_data **data)
 {
 	t_texture		*image;
-	t_pos		    *exit;
+	t_pos			*exit;
 
 	exit = get_component((*data)->map, 'E');
 	image = (*data)->tiles;

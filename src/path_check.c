@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 16:03:25 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/19 14:35:37 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/29 14:01:37 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	step_back(t_map **map)
 void	check_map_path(t_map *map)
 {
 	int			i;
-	t_pos	new_pos;
+	t_pos		new_pos;
 
 	i = 0;
 	mark_map(&map);

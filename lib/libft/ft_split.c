@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 20:32:16 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/18 15:47:31 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/29 14:11:26 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,10 @@ static int	get_words(char const *s, char c)
 	while (s[++i])
 	{
 		if (s[i] != c)
-		{
 			while (s[i] != c && s[i])
 				i++;
 		wc++;
 		i--;
-		}
 	}
 	return (wc);
 }

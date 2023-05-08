@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:05:48 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/08 18:00:44 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/29 13:42:09 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	free_and_return(void *memory)
 
 int	get_bytes(char *map)
 {
-	int	fd;
+	int		fd;
 	char	*buffer;
-	int	read_byte;
-	int	total_bytes;
+	int		read_byte;
+	int		total_bytes;
 
 	total_bytes = 0;
 	fd = open (map, O_RDONLY);
@@ -39,10 +39,10 @@ int	get_bytes(char *map)
 	}
 	close(fd);
 	free(buffer);
-	return(total_bytes);
+	return (total_bytes);
 }
 
-char *read_map(char *map)
+char	*read_map(char *map)
 {
 	int		file;
 	int		bytes;

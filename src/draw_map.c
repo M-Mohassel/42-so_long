@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:11:41 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/28 13:07:02 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/04/29 13:42:58 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	add_player_box(t_data **data)
 {
 	int			posx;
 	int			posy;
-	t_pos	    *player_pos;
+	t_pos		*player_pos;
 
 	player_pos = get_component((*data)->map, 'P');
 	posx = player_pos->x * TILE;
