@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:31:54 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/28 13:51:28 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/05/12 12:16:58 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 # define SPRITE 64
 # define TILE 32
 
-# define TREE "./assets/baum1.xpm"
 
 typedef struct s_map			t_map;
 typedef struct s_position		t_pos;

@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:16:47 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/28 13:18:46 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:50:11 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	init_tile_textures(t_data **data)
 
 	(*data)->tiles = (t_texture *)malloc(sizeof(t_texture));
 	tiles = (*data)->tiles;
-	tiles->floor = mlx_load_png("assets/tiles/floor/0.png");
-	tiles->wall = mlx_load_png("assets/tiles/wall/0.png");
+	tiles->floor = mlx_load_png("assets/tiles/floor/floor.png");
+	tiles->wall = mlx_load_png("assets/tiles/wall/wall1.png");
 	tiles->exit[0] = mlx_load_png("assets/tiles/other/33.png");
 	tiles->exit[1] = mlx_load_png("assets/tiles/other/34.png");
 	tiles->exit[2] = 0;

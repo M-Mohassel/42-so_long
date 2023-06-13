@@ -6,11 +6,33 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:54:28 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/29 13:58:32 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/13 11:27:06 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+int	is_component(char *str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+		if ((str[i] == 'E' || str[i] == 'P') || str[i] == 'C')
+			return (TRUE);
+	return (FALSE);
+}
+
+int	contains_component(char **map)
+{
+	int	i;
+
+	i = -1;
+	while (map[++i])
+		if (is_component(map[i]))
+			return (TRUE);
+	return (FALSE);
+}
 
 int	has_no_valid_path(t_map *map)
 {
@@ -21,7 +43,7 @@ int	has_no_valid_path(t_map *map)
 	return (FALSE);
 }
 
-int	empty(char	*map_string)
+int	empty(char *map_string)
 {
 	if (map_string[0] == 0)
 		return (TRUE);
@@ -47,27 +69,5 @@ int	map_has_errors(char *argv)
 	if (has_no_valid_path(map))
 		return (no_valid_path(map));
 	destroy_structure(map);
-	return (FALSE);
-}
-
-int	is_component(char *str)
-{
-	int	i;
-
-	i = -1;
-	while (str[++i])
-		if ((str[i] == 'E' || str[i] == 'P') || str[i] == 'C')
-			return (TRUE);
-	return (FALSE);
-}
-
-int	contains_component(char **map)
-{
-	int	i;
-
-	i = -1;
-	while (map[++i])
-		if (is_component(map[i]))
-			return (TRUE);
 	return (FALSE);
 }

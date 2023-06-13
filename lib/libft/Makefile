@@ -6,7 +6,7 @@
 #    By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 17:47:36 by misi-moh          #+#    #+#              #
-#    Updated: 2023/04/28 14:54:08 by misi-moh         ###   ########.fr        #
+#    Updated: 2023/06/13 12:17:52 by misi-moh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,10 +38,10 @@ bonus: $(OBJECTS) $(BOBJECTS)
 	$(CC) -c $(CFLAGS) $?
 
 clean:
-	rm -f $(OBJECTS) $(BOBJECTS)
+	@rm -f $(OBJECTS) $(BOBJECTS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
