@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:46:38 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/06/13 12:12:00 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/16 13:29:01 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	destroy_and_free(t_data **data)
 	free_split((*data)->map);
 	free((*data)->map_string);
 	destroy_movements(data);
-	destroy_idle_structure(data);
 	destroy_tile_structure(data);
 }
 
@@ -56,7 +55,5 @@ int	main(int argc, char **argv)
 		else
 			game_loop(argv[1]);
 	}
-	system("leaks so_long");
-	system("leaks bonus");
 	return (FALSE);
 }

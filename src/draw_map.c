@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:11:41 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/29 13:42:58 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/16 13:28:43 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,6 @@ void	add_player_box(t_data **data)
 	ft_memset((*data)->player_box->pixels, 0, TILE * TILE * 4);
 	mlx_image_to_window((*data)->mlx, (*data)->player_box, posx, posy);
 	free(player_pos);
-}
-
-void	draw_enemies(t_data **data)
-{
-	int	y;
-	int	x;
-
-	y = -1;
-	while ((*data)->map[++y])
-	{
-		x = -1;
-		while ((*data)->map[y][++x])
-			put_enemy(data, x, y);
-	}
 }
 
 void	draw_collectables(t_data **data)
@@ -76,7 +62,6 @@ void	draw_map(t_data **data)
 
 	width = TILE * ft_strlen(*(*data)->map);
 	height = TILE * ft_arrlength((*data)->map);
-	init_idle_texture(data);
 	init_tile_textures(data);
 	ft_memset((*data)->img->pixels, 255, width * height * 4);
 	mlx_image_to_window((*data)->mlx, (*data)->img, 0, 0);

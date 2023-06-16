@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:05:29 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/04/28 13:07:35 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/16 12:20:07 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	function_move(t_data *data, t_pos *position)
 	mlx_image_t		*player_box;
 	static int		move;
 
-	player = data->idle->right_idle[0];
+	player = data->tiles->player_img;
 	player_box = data->player_box;
 	if (is_valid_move(data, position))
 	{
@@ -69,13 +69,13 @@ void	keyhook(mlx_key_data_t keydata, void *param)
 	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(data->mlx);
 	if (keydata.key == MLX_KEY_S && keydata.action == MLX_PRESS)
-		function_move(data, data->enemy_movement[1]);
+		function_move(data, data->game_movement[1]);
 	if (keydata.key == MLX_KEY_A && keydata.action == MLX_PRESS)
-		function_move(data, data->enemy_movement[3]);
+		function_move(data, data->game_movement[3]);
 	if (keydata.key == MLX_KEY_W && keydata.action == MLX_PRESS)
-		function_move(data, data->enemy_movement[0]);
+		function_move(data, data->game_movement[0]);
 	if (keydata.key == MLX_KEY_D && keydata.action == MLX_PRESS)
-		function_move(data, data->enemy_movement[2]);
+		function_move(data, data->game_movement[2]);
 	if (player_is_on_exit(&data) && !data->collectible_list)
 	{
 		ft_putstr_fd("Game completed!", 1);

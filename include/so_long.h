@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:31:54 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/05/12 12:16:58 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/16 13:33:18 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@
 # include <stdio.h>
 # include <string.h>
 
-# define SPRITE 64
 # define TILE 32
-
 
 typedef struct s_map			t_map;
 typedef struct s_position		t_pos;
@@ -43,11 +41,11 @@ struct	s_texture
 {
 	mlx_texture_t	*floor;
 	mlx_texture_t	*wall;
-	mlx_texture_t	*enemy[3];
 	mlx_texture_t	*exit[3];
+	mlx_texture_t	*player;
 	mlx_image_t		*floor_img;
 	mlx_image_t		*wall_img;
-	mlx_image_t		*enemy_img[3];
+	mlx_image_t		*player_img;
 	mlx_image_t		*exit_img[3];
 
 };
@@ -59,27 +57,17 @@ struct s_data
 	char			*collectible_count;
 	mlx_texture_t	*player;
 	mlx_image_t		*score;
-	t_idle			*idle;
 	t_texture		*tiles;
 	t_list			*collectible_list;
 	t_list			*enemy_list;
 	mlx_texture_t	*game_icon;
 	mlx_image_t		*player_img;
 	mlx_image_t		*player_box;
-	t_pos			*enemy_movement[5];
+	t_pos			*game_movement[5];
 	char			*map_string;
 	char			**map;
 	int				width;
 	int				height;
-};
-
-struct	s_idle_texture
-{
-	mlx_texture_t	*left[9];	
-	mlx_texture_t	*right[9];	
-	mlx_image_t		*right_idle[9];	
-	mlx_image_t		*left_idle[9];	
-	mlx_image_t		*idle;
 };
 
 struct s_map
@@ -157,10 +145,10 @@ void	put_enemy(t_data **data, int width, int height);
 void	put_floor(t_data **data, char c, int width, int height);
 void	add_player(t_data **data);
 void	put_door(t_data **data);
-t_pos   *get_player_pos(char **map);
-t_pos   *get_exit_pos(char **map);
+t_pos	*get_player_pos(char **map);
+t_pos	*get_exit_pos(char **map);
 t_map	*init_structure(char *map_string);
-t_pos   *get_component(char **map, char type);
+t_pos	*get_component(char **map, char type);
 void	destroy_structure(t_map *map);
 void	delete_tile_textures(t_data **data);
 void	delete_idle_textures(t_data **data);

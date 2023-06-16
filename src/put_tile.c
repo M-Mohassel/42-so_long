@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:13:41 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/05/12 13:56:15 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/16 13:30:09 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,6 @@ void	put_collectable(t_data **data, int width, int height)
 	mlx_delete_texture(tiles);
 }
 
-void	put_enemy(t_data **data, int width, int height)
-{
-	mlx_texture_t	*tiles;
-	mlx_image_t		*image;
-
-	tiles = mlx_load_png("assets/enemy/idle/1.png");
-	image = mlx_texture_to_image((*data)->mlx, tiles);
-	if ((*data)->map[height][width] == 'G')
-	{
-		ft_lstadd_front(&((*data)->enemy_list), ft_lstnew(image));
-		((*data)->enemy_list)->x = width;
-		((*data)->enemy_list)->y = height;
-		mlx_image_to_window((*data)->mlx, ((*data)->enemy_list)->position,
-			width * TILE - 14, height * TILE - 16);
-	}
-	mlx_delete_texture(tiles);
-}
-
 void	put_floor(t_data **data, char c, int width, int height)
 {
 	t_texture	*tiles;
@@ -63,14 +45,14 @@ void	add_player(t_data **data)
 {
 	int			posx;
 	int			posy;
-	t_idle		*player;
+	t_texture	*player;
 	t_pos		*player_pos;
 
 	player_pos = get_component((*data)->map, 'P');
 	posx = player_pos->x * TILE;
 	posy = player_pos->y * TILE;
-	player = (*data)->idle;
-	mlx_image_to_window((*data)->mlx, player->right_idle[0],
+	player = (*data)->tiles;
+	mlx_image_to_window((*data)->mlx, player->player_img,
 		posx - 16, posy - 24);
 	free(player_pos);
 }
