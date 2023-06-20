@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:31:54 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/06/16 13:33:18 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:36:57 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,20 @@ typedef struct s_position		t_pos;
 typedef struct s_data			t_data;
 typedef struct s_texture		t_texture;
 typedef struct s_idle_texture	t_idle;
+typedef struct s_lst			t_lst;
 
 enum e_bool
 {
 	FALSE,
 	TRUE
 };
+
+typedef struct s_lst
+{	
+	int					x;
+	int					y;
+	struct s_lst		*next;
+}				t_lst;
 
 struct	s_texture
 {
@@ -59,7 +67,6 @@ struct s_data
 	mlx_image_t		*score;
 	t_texture		*tiles;
 	t_list			*collectible_list;
-	t_list			*enemy_list;
 	mlx_texture_t	*game_icon;
 	mlx_image_t		*player_img;
 	mlx_image_t		*player_box;
@@ -68,6 +75,8 @@ struct s_data
 	char			**map;
 	int				width;
 	int				height;
+	int				index;
+	t_lst			*list_col;
 };
 
 struct s_map
@@ -164,5 +173,10 @@ int		upper_wall_not_closed(char *upper_wall);
 int		lower_wall_not_closed(char *lower_wall);
 int		sidewalls_not_closed(char **map, size_t array_length);
 int		not_valid_map(char **map);
+
+t_lst *findCharacters(char *str);
+void	print_lst(t_list *rtl);
+void insertNode(t_lst	**head, int x, int y);
+t_lst	*createnode(int x, int y);
 
 #endif

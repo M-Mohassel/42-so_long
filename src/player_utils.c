@@ -6,39 +6,13 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:11:48 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/06/16 11:48:12 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/20 12:30:27 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-/*void	player_is_on_enemy(t_data **data)
-{
-	mlx_instance_t	*player;
-	mlx_image_t		*enemy;
-	t_list			*current;
-	int				posx;
-	int				posy;
 
-	current = (*data)->enemy_list;
-	player = (*data)->player_box->instances;
-	while (current)
-	{
-		enemy = current->position;
-		if ((enemy->instances[0].x / TILE + 1)
-			== (player[0].x / TILE) && (enemy->instances[0].y / TILE + 1)
-			== (player[0].y / TILE))
-			mlx_close_window((*data)->mlx);
-		current = current->next;
-	}
-	posx = player[0].x / TILE;
-	posy = player[0].y / TILE;
-	if ((*data)->map[posy][posx] == 'C')
-	{
-		(*data)->map[posy][posx] = '0';
-		delete_collectible(data);
-	}
-}*/
 
 int	player_is_on_exit(t_data **data)
 {
@@ -51,29 +25,6 @@ int	player_is_on_exit(t_data **data)
 		return (1);
 	return (0);
 }
-
-/*void	idle_animation(void *param)
-{
-	t_data			*data;
-	mlx_image_t		**player;
-	static int		frames;
-	static int		i;
-
-	data = param;
-	player = data->idle->right_idle;
-	if (frames == 0 || frames % 7 == 0)
-	{
-		ft_memcpy(player[0]->pixels, player[i]->pixels,
-			SPRITE * SPRITE * 4);
-		if (i == 7)
-		{
-			frames = -1;
-			i = -1;
-		}
-		i++;
-	}
-	frames++;
-}*/
 
 int	is_valid_move(t_data *data, t_pos *position)
 {

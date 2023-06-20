@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:05:57 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/05/12 13:24:14 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:50:03 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	get_collectible_count(char *map)
 	return (count);
 }
 
-void	free_and_delete_image(t_data **data, mlx_image_t *image, t_list *head)
+/*void	free_and_delete_image(t_data **data, mlx_image_t *image, t_list *head)
 {
 	t_list	*temp;
 
@@ -33,7 +33,7 @@ void	free_and_delete_image(t_data **data, mlx_image_t *image, t_list *head)
 	mlx_delete_image((*data)->mlx, image);
 	free(temp);
 }
-
+*/
 void	delete_collectible(t_data **data)
 {
 	t_list	*head;
@@ -43,9 +43,21 @@ void	delete_collectible(t_data **data)
 	posx = (*data)->player_box->instances[0].x / TILE;
 	posy = (*data)->player_box->instances[0].y / TILE;
 	head = (*data)->collectible_list;
-	if (head->x == posx && head->y == posy)
-	{
-		(*data)->collectible_list = (*data)->collectible_list->next;
+	//if (head->x == posx && head->y == posy)
+	//{
+		while (head->next)
+		{
+			if (head->x == posx && head->y == posy)
+			{
+				//(*data)->collectible_list = (*data)->collectible_list->next;
+				mlx_delete_image((*data)->mlx, head->position);
+				//free(head);
+				(*data)->index--;
+				return ;
+			}
+			head = head->next;
+		}
+	/*	(*data)->collectible_list = (*data)->collectible_list->next;
 		mlx_delete_image((*data)->mlx, head->position);
 		free(head);
 		return ;
@@ -59,10 +71,10 @@ void	delete_collectible(t_data **data)
 			return ;
 		}
 		head = head->next;
-	}
+	}*/
 }
 
-void	player_is_on_colectible(t_data **data)
+/*void	player_is_on_colectible(t_data **data)
 {
 	mlx_instance_t	*player;
 	int				posx;
@@ -91,3 +103,4 @@ void	check_if_collected_all(t_data *data)
 			TILE * TILE * 4);
 	}
 }
+*/
