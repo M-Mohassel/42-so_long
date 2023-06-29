@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:46:38 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/06/20 12:13:43 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/28 09:58:20 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	destroy_and_free(t_data **data)
 {
-	t_data	*tmp;
-
-	tmp = *data;
 	free_split((*data)->map);
 	free((*data)->map_string);
 	destroy_movements(data);

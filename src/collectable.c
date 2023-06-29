@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:05:57 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/06/20 18:50:03 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/28 13:37:55 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	get_collectible_count(char *map)
 	return (count);
 }
 
-/*void	free_and_delete_image(t_data **data, mlx_image_t *image, t_list *head)
+void	free_and_delete_image(t_data **data, mlx_image_t *image, t_list *head)
 {
 	t_list	*temp;
 
@@ -33,48 +33,35 @@ int	get_collectible_count(char *map)
 	mlx_delete_image((*data)->mlx, image);
 	free(temp);
 }
-*/
+
 void	delete_collectible(t_data **data)
 {
-	t_list	*head;
+	t_list	*tmp;
+	t_list	*prev;
 	int		posy;
 	int		posx;
 
 	posx = (*data)->player_box->instances[0].x / TILE;
 	posy = (*data)->player_box->instances[0].y / TILE;
-	head = (*data)->collectible_list;
-	//if (head->x == posx && head->y == posy)
-	//{
-		while (head->next)
-		{
-			if (head->x == posx && head->y == posy)
-			{
-				//(*data)->collectible_list = (*data)->collectible_list->next;
-				mlx_delete_image((*data)->mlx, head->position);
-				//free(head);
-				(*data)->index--;
-				return ;
-			}
-			head = head->next;
-		}
-	/*	(*data)->collectible_list = (*data)->collectible_list->next;
-		mlx_delete_image((*data)->mlx, head->position);
-		free(head);
+	tmp = (*data)->collectible_list;
+	if (tmp->x == posx && tmp->y == posy)
+	{
+		(*data)->collectible_list = tmp->next;
+		mlx_delete_image((*data)->mlx, tmp->position);
+		free(tmp);
 		return ;
 	}
-	while (head->next)
+	while (tmp != NULL && !(tmp->x == posx && tmp->y == posy))
 	{
-		if (head->next->x == posx && head->next->y == posy)
-		{
-			free_and_delete_image(data, head->next->position, head);
-			head->next = head->next->next;
-			return ;
-		}
-		head = head->next;
-	}*/
+		prev = tmp;
+		tmp = tmp->next;
+	}
+	prev->next = tmp->next;
+	mlx_delete_image((*data)->mlx, tmp->position);
+	free(tmp);
 }
 
-/*void	player_is_on_colectible(t_data **data)
+void	player_is_on_colectible(t_data **data)
 {
 	mlx_instance_t	*player;
 	int				posx;
@@ -103,4 +90,3 @@ void	check_if_collected_all(t_data *data)
 			TILE * TILE * 4);
 	}
 }
-*/

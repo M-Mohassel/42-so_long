@@ -6,13 +6,11 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:11:48 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/06/20 12:30:27 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/06/28 09:55:44 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-
-
 
 int	player_is_on_exit(t_data **data)
 {

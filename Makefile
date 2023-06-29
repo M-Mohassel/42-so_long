@@ -1,5 +1,5 @@
 NAME	:= Game
-CFLAGS	:= -Wextra -Wall -Werror -Wunreachable-code -Ofast -g3 -g
+CFLAGS	:= -Wextra -Wall -Werror -Wunreachable-code -Ofast -g3
 LIBMLX	:= ./lib/MLX42
 
 HEADERS	:= -I ./include -I $(LIBMLX)/include
@@ -31,6 +31,7 @@ check_directory:
 clean:
 	@rm -f $(OBJS)
 	@make -C $(LIBFT_DIR) clean
+	@rm -fr $(LIBMLX)
 
 fclean: clean
 	@rm -f $(NAME)
