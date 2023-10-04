@@ -1,17 +1,22 @@
-NAME	:= Game
-CFLAGS	:= -Wextra -Wall -Werror -Wunreachable-code -Ofast -g3
+NAME	:= so_long
+CFLAGS	:= -Wextra -Wall -Werror -Wunreachable-code -Ofast
 LIBMLX	:= ./lib/MLX42
 
 HEADERS	:= -I ./include -I $(LIBMLX)/include
 LIBS	:= $(LIBMLX)/build/libmlx42.a -L./lib/libft -lft -ldl -lglfw -pthread -lm
 LIBFT	:= ./lib/libft/libft.a
 LIBFT_DIR	= ./lib/libft
-SRCS	:= $(shell find ./src -iname "*.c")
+SRCS	:= \
+	./src/collectable.c ./src/component_check.c ./src/coord_utils.c ./src/draw_map.c \
+	./src/errors.c ./src/loop.c ./src/main.c ./src/map.c ./src/map_check.c \
+	./src/name_check.c ./src/path_check.c ./src/player_utils.c ./src/put_tile.c \
+	./src/struct_utils.c ./src/tiles.c ./src/tile_utils.c ./src/wall_check.c
+
 OBJS	:= ${SRCS:.c=.o}
 
-all: check_directory $(NAME)
+all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT) libmlx
+$(NAME): $(LIBMLX) $(OBJS) $(LIBFT)
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBS) $(HEADERS) -o $(NAME)
 
 %.o: %.c
@@ -20,12 +25,10 @@ $(NAME): $(OBJS) $(LIBFT) libmlx
 $(LIBFT):
 	@make -C $(LIBFT_DIR)
 
-libmlx:
-	@cd $(LIBMLX) && cmake -B build && cmake --build build -j4
-
-check_directory:
-	@if ! [ -d "$(LIBMLX)" ]; then \
+$(LIBMLX) :
+	@if ! [ -d "./lib/MLX42/build" ]; then \
 	git clone https://github.com/codam-coding-college/MLX42.git $(LIBMLX); \
+	cd $(LIBMLX) && cmake -B build && cmake --build build -j4;\
 	fi
 
 clean:

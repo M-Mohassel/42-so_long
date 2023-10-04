@@ -6,7 +6,7 @@
 /*   By: misi-moh <misi-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 12:31:57 by misi-moh          #+#    #+#             */
-/*   Updated: 2023/06/16 11:38:25 by misi-moh         ###   ########.fr       */
+/*   Updated: 2023/09/04 13:58:51 by misi-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,16 @@ int	is_missing_components(char *map)
 	collectible = get_count(map, 'C');
 	i = -1;
 	while (map[++i])
+	{
+		if (map[i] == '\n')
+		{
+			if ((map[i] && map[i - 1] == '\n') || 
+				(map[i] && map[i + 1] == '\n') || i == 0 || !map[i + 1])
+				return (TRUE);
+		}
 		if (is_invalid_component(map[i]) == FALSE)
 			return (TRUE);
+	}
 	if (player == 1 && exit == 1 && collectible > 0)
 		return (FALSE);
 	return (TRUE);
